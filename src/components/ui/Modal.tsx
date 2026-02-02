@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../../styles/Modal.css";
 
 interface ModalProps {
   isOpen: boolean;
@@ -13,12 +14,10 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     let timer: number | undefined;
 
     if (isOpen) {
-      // 👉 effect 내부에서 동기 setState 금지 → 비동기로 분리
       timer = window.setTimeout(() => {
         setIsVisible(true);
       }, 0);
     } else {
-      // 👉 닫힐 때 애니메이션 끝난 뒤 unmount
       timer = window.setTimeout(() => {
         setIsVisible(false);
       }, 300); // CSS transition duration과 동일
@@ -29,15 +28,32 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
     };
   }, [isOpen]);
 
+  // ESC 키로 닫기
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
+
   // 완전히 닫힌 상태면 DOM에서 제거
   if (!isOpen && !isVisible) return null;
 
   return (
-    <div className={`modal-overlay ${isVisible ? "show" : ""}`}>
-      <div className="modal">
-        <button className="modal-close" onClick={onClose}>
-          ✕
-        </button>
+    <div
+      className={`modal-overlay ${isVisible ? "show" : ""}`}
+      onClick={onClose} // ✅ 배경 클릭 시 닫힘
+    >
+      <div
+        className="modal"
+        onClick={(e) => e.stopPropagation()} // 내부 클릭은 닫히지 않게
+      >
         {children}
       </div>
     </div>
