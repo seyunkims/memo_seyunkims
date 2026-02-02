@@ -1,0 +1,73 @@
+/* src/styles/Sidebar.css */
+.sidebar {
+    width: 260px;
+    background-color: #121212;
+    color: #e4e4e7;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    margin-bottom: 40px;
+    padding-left: 12px;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border-radius: 0 50px 50px 0; /* Google Keep style */
+    border: none;
+    background: transparent;
+    color: #a1a1aa;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    margin-left: -12px; /* Pull left to attach to edge */
+    padding-left: 28px;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background-color: rgba(79, 172, 254, 0.15);
+    color: #4facfe;
+}
+
+.nav-item .icon {
+    font-size: 1.2rem;
+}
+
+.sidebar-footer {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+    color: #52525b;
+    text-align: center;
+}
