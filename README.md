@@ -1,6 +1,6 @@
 # 📝 세윤이의 메모장 V2.0 (Notepad)
 
-ß
+
 ## ✨ 주요 기능 (Key Features)
 
 ### 🖥️ Professional Dashboard UI
