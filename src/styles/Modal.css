@@ -15,7 +15,7 @@
     transition: opacity 0.2s ease-in-out;
 }
 
-.modal-overlay.open {
+.modal-overlay.show {
     opacity: 1;
 }
 
@@ -24,28 +24,28 @@
     pointer-events: none;
 }
 
-.modal-content {
+.modal {
     background: rgba(245, 245, 245, 0.95); /* iOS System Gray 6 */
     backdrop-filter: blur(20px);
     border: none;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-radius: 14px;
     padding: 0;
-    width: 270px; /* iOS Alert standard width */
+    width: 320px; /* Increased to fit text */
     transform: scale(1.1);
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: center;
     overflow: hidden;
 }
 
-.modal-content.open {
+.modal-overlay.show .modal {
     transform: scale(1);
     opacity: 1;
 }
 
-.modal-content.closing {
-    transform: scale(0.9);
-    opacity: 0;
+.modal-overlay:not(.show) .modal {
+     transform: scale(0.9);
+     opacity: 0;
 }
 
 .modal-title {

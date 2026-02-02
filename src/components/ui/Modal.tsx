@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import '../../styles/Modal.css';
 
 interface ModalProps {
   isOpen: boolean;
@@ -35,9 +36,6 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
   return (
     <div className={`modal-overlay ${isVisible ? "show" : ""}`}>
       <div className="modal">
-        <button className="modal-close" onClick={onClose}>
-          ✕
-        </button>
         {children}
       </div>
     </div>
