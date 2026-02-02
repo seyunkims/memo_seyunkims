@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# 📝 세윤이의 메모장 V2.0 (Notepad)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ 주요 기능 (Key Features)
 
-Currently, two official plugins are available:
+### 🖥️ Professional Dashboard UI
+- **Sidebar Navigation**: '메모(Notes)'와 '휴지통(Trash)'을 쉽게 오갈 수 있는 직관적인 사이드바.
+- **Masonry Grid Layout**: 메모의 길이에 따라 최적화된 반응형 그리드 레이아웃 제공.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔍 Smart Search (실시간 검색)
+- 상단 검색바를 통해 메모 내용을 실시간으로 필터링하고 찾을 수 있습니다.
 
-## React Compiler
+### 🛡️ Safety System (안전한 삭제)
+- **Soft Delete**: 메모 삭제 시 즉시 사라지지 않고 **휴지통**으로 이동합니다.
+- **Trash Management**: 휴지통에서 메모를 **복구(Restore)** 하거나 **영구 삭제**할 수 있습니다.
+- **Empty Trash**: 휴지통 비우기 기능으로 불필요한 데이터를 한 번에 정리하세요.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🎨 Premium Design & Interactions
+- **Dark Mode Optimized**: 눈이 편안한 프리미엄 다크 테마 (#121212 ~ #18181b).
+- **Custom Modals**: 브라우저 기본 알림창 대신, 앱의 디자인과 일치하는 고급스러운 모달 창 적용.
+- **Micro-Animations**: 부드러운 호버 효과와 전환 애니메이션.
 
-## Expanding the ESLint configuration
+## 🛠️ 기술 스택 (Tech Stack)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 18, TypeScript
+- **Build**: Vite
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 시작하기 (Getting Started)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. 저장소 클론 (Clone Repository)
+   ```bash
+   git clone https://github.com/seyunkims/memo_seyunkims.git
+   cd memo_seyunkims
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. 의존성 설치 (Install Dependencies)
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. 개발 서버 실행 (Run Dev Server)
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🤝 기여하기 (Contributing)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+이 프로젝트는 오픈 소스이며, 누구나 기여할 수 있습니다. 버그 제보나 기능 제안은 Issue를 통해 남겨주세요.
