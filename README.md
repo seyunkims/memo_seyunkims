@@ -15,11 +15,6 @@
 - **Trash Management**: 휴지통에서 메모를 **복구(Restore)** 하거나 **영구 삭제**할 수 있습니다.
 - **Empty Trash**: 휴지통 비우기 기능으로 불필요한 데이터를 한 번에 정리하세요.
 
-### 🎨 Premium Design & Interactions
-- **Dark Mode Optimized**: 눈이 편안한 프리미엄 다크 테마 (#121212 ~ #18181b).
-- **Custom Modals**: 브라우저 기본 알림창 대신, 앱의 디자인과 일치하는 고급스러운 모달 창 적용.
-- **Micro-Animations**: 부드러운 호버 효과와 전환 애니메이션.
-
 ## 🛠️ 기술 스택 (Tech Stack)
 
 - **Frontend**: React 18, TypeScript
