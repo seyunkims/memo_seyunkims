@@ -21,3 +21,14 @@
     margin-bottom: 20px;
     opacity: 0.3;
 }
+
+@media (max-width: 768px) {
+    .memo-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 16px;
+    }
+    
+    .empty-state {
+        height: 50vh;
+    }
+}

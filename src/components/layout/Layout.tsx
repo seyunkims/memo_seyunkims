@@ -9,9 +9,9 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, currentView, onViewChange }) => {
     return (
-        <div className="app-layout" style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#ffffff' }}>
+        <div className="app-layout">
             <Sidebar currentView={currentView} onViewChange={onViewChange} />
-            <main className="main-content" style={{ flex: 1, padding: '24px 40px', overflowY: 'auto' }}>
+            <main className="main-content">
                 {children}
             </main>
         </div>

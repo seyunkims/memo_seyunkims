@@ -18,6 +18,37 @@
     letter-spacing: -0.5px;
 }
 
+/* Layout */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--ios-bg-primary);
+    transition: all 0.3s ease;
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px 40px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .app-layout {
+        flex-direction: column-reverse; /* Sidebar at bottom */
+    }
+
+    .main-content {
+        padding: 20px 16px 80px 16px; /* Bottom padding for Nav */
+    }
+
+    .app-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
+
 /* ============================================
    메모 입력 폼
    ============================================ */
