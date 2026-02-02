@@ -3,6 +3,8 @@ export interface Memo {
     content: string;
     createdAt: string;
     updatedAt: string;
+    isDeleted?: boolean;
+    isPinned?: boolean;
 }
 
 export interface MemoInput {

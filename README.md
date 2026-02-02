@@ -1,65 +1,73 @@
-#  세윤이의 메모장 (Seyun's Notepad)
+# React + TypeScript + Vite
 
-## 🗒️ 간단한 메모장 어플입니다.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## ✨ 특징 (Features)
+Currently, two official plugins are available:
 
-- **Premium Dark Mode**: 눈이 편안한 다크 테마와 고급스러운 그라디언트 디자인.
-- **CRUD Functionality**: 메모 작성(Create), 조회(Read), 수정(Update), 삭제(Delete) 기능 완벽 지원.
-- **Micro-Animations**: 부드러운 호버 효과와 전환 애니메이션으로 향상된 사용자 경험.
-- **Safe Deletion**: 실수 방지를 위한 커스텀 확인 모달(Confirm Modal) 적용.
-- **Responsive Design**: 데스크톱과 모바일 환경 모두 최적화.
-- **Local Storage**: 새로고침 후에도 유지되는 데이터 영구 저장.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🛠️ 기술 스택 (Tech Stack)
+## React Compiler
 
-- **Frontend Framework**: React 18
-- **Language**: TypeScript
-- **Build Tool**: Vite
-- **Styling**: Vanilla CSS (Variables & Modules)
-- **Typography**: Google Fonts (Inter)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🚀 시작하기 (Getting Started)
+## Expanding the ESLint configuration
 
-### 사전 요구사항 (Prerequisites)
-- Node.js (v18 이상 권장)
-- npm
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-### 설치 및 실행 (Installation & Run)
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-1. 저장소 클론 (Clone Repository)
-   ```bash
-   git clone https://github.com/seyunkims/memo_seyunkims.git
-   cd memo_seyunkims
-   ```
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-2. 의존성 설치 (Install Dependencies)
-   ```bash
-   npm install
-   ```
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-3. 개발 서버 실행 (Run Dev Server)
-   ```bash
-   npm run dev
-   ```
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-4. 브라우저 접속
-   - `http://localhost:5173` 으로 접속하여 앱을 확인하세요.
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## 🎨 디자인 시스템 (Design System)
-
-- **Colors**:
-  - Background: `#121212` (Radial Gradient Glow)
-  - Cards: `#1e1e2f` (Dark Blue-Grey)
-  - Primary Accent: Cyan to Blue Gradient (`#4facfe` -> `#00f2fe`)
-  - Text: White / Light Grey (`#e0e0e0`)
-
-- **Typography**:
-  - Font Family: 'Inter', sans-serif
-
-## 🤝 기여하기 (Contributing)
-
-이 프로젝트에 기여하고 싶다면 Pull Request를 보내주세요. 모든 기여는 환영합니다!
-
----
-© 2024 Seyun Kim. All rights reserved.
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
