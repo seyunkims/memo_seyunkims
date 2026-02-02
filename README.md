@@ -1,31 +1,31 @@
-#  세윤이의 메모장 (Seyun's Notepad)
+# 📝 세윤이의 메모장 V2.0 (Notepad)
 
-## 🗒️ 간단한 메모장 어플입니다.
+ß
+## ✨ 주요 기능 (Key Features)
 
-## ✨ 특징 (Features)
+### 🖥️ Professional Dashboard UI
+- **Sidebar Navigation**: '메모(Notes)'와 '휴지통(Trash)'을 쉽게 오갈 수 있는 직관적인 사이드바.
+- **Masonry Grid Layout**: 메모의 길이에 따라 최적화된 반응형 그리드 레이아웃 제공.
 
-- **Premium Dark Mode**: 눈이 편안한 다크 테마와 고급스러운 그라디언트 디자인.
-- **CRUD Functionality**: 메모 작성(Create), 조회(Read), 수정(Update), 삭제(Delete) 기능 완벽 지원.
-- **Micro-Animations**: 부드러운 호버 효과와 전환 애니메이션으로 향상된 사용자 경험.
-- **Safe Deletion**: 실수 방지를 위한 커스텀 확인 모달(Confirm Modal) 적용.
-- **Responsive Design**: 데스크톱과 모바일 환경 모두 최적화.
-- **Local Storage**: 새로고침 후에도 유지되는 데이터 영구 저장.
+### 🔍 Smart Search (실시간 검색)
+- 상단 검색바를 통해 메모 내용을 실시간으로 필터링하고 찾을 수 있습니다.
+
+### 🛡️ Safety System (안전한 삭제)
+- **Soft Delete**: 메모 삭제 시 즉시 사라지지 않고 **휴지통**으로 이동합니다.
+- **Trash Management**: 휴지통에서 메모를 **복구(Restore)** 하거나 **영구 삭제**할 수 있습니다.
+- **Empty Trash**: 휴지통 비우기 기능으로 불필요한 데이터를 한 번에 정리하세요.
+
+### 🎨 Premium Design & Interactions
+- **Dark Mode Optimized**: 눈이 편안한 프리미엄 다크 테마 (#121212 ~ #18181b).
+- **Custom Modals**: 브라우저 기본 알림창 대신, 앱의 디자인과 일치하는 고급스러운 모달 창 적용.
+- **Micro-Animations**: 부드러운 호버 효과와 전환 애니메이션.
 
 ## 🛠️ 기술 스택 (Tech Stack)
 
-- **Frontend Framework**: React 18
-- **Language**: TypeScript
-- **Build Tool**: Vite
-- **Styling**: Vanilla CSS (Variables & Modules)
-- **Typography**: Google Fonts (Inter)
+- **Frontend**: React 18, TypeScript
+- **Build**: Vite
 
 ## 🚀 시작하기 (Getting Started)
-
-### 사전 요구사항 (Prerequisites)
-- Node.js (v18 이상 권장)
-- npm
-
-### 설치 및 실행 (Installation & Run)
 
 1. 저장소 클론 (Clone Repository)
    ```bash
@@ -42,24 +42,3 @@
    ```bash
    npm run dev
    ```
-
-4. 브라우저 접속
-   - `http://localhost:5173` 으로 접속하여 앱을 확인하세요.
-
-## 🎨 디자인 시스템 (Design System)
-
-- **Colors**:
-  - Background: `#121212` (Radial Gradient Glow)
-  - Cards: `#1e1e2f` (Dark Blue-Grey)
-  - Primary Accent: Cyan to Blue Gradient (`#4facfe` -> `#00f2fe`)
-  - Text: White / Light Grey (`#e0e0e0`)
-
-- **Typography**:
-  - Font Family: 'Inter', sans-serif
-
-## 🤝 기여하기 (Contributing)
-
-이 프로젝트에 기여하고 싶다면 Pull Request를 보내주세요. 모든 기여는 환영합니다!
-
----
-© 2024 Seyun Kim. All rights reserved.

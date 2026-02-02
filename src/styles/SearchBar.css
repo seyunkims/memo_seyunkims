@@ -1,0 +1,39 @@
+/* src/styles/SearchBar.css */
+.search-bar-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--ios-gray-input);
+    border-radius: 10px; /* iOS rounded corner */
+    padding: 10px 16px;
+    transition: background-color 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+    background-color: #d1d1d6;
+    box-shadow: none;
+}
+
+.search-icon {
+    margin-right: 12px;
+    opacity: 0.5;
+}
+
+.search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #000000;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #8e8e93;
+}
