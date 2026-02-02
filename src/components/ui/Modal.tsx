@@ -1,56 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import '../../styles/Modal.css';
+import { useEffect, useState } from "react";
 
 interface ModalProps {
-    isOpen: boolean;
-    title: string;
-    message: string;
-    confirmText?: string;
-    cancelText?: string;
-    type?: 'danger' | 'primary';
-    onConfirm: () => void;
-    onCancel: () => void;
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({
-    isOpen,
-    title,
-    message,
-    confirmText = '확인',
-    cancelText = '취소',
-    type = 'primary',
-    onConfirm,
-    onCancel,
-}) => {
-    const [isVisible, setIsVisible] = useState(isOpen);
+export default function Modal({ isOpen, onClose, children }: ModalProps) {
+  const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        if (isOpen) {
-            setIsVisible(true);
-        } else {
-            const timer = setTimeout(() => setIsVisible(false), 300); // Animation duration
-            return () => clearTimeout(timer);
-        }
-    }, [isOpen]);
+  useEffect(() => {
+    let timer: number | undefined;
 
-    if (!isVisible) return null;
+    if (isOpen) {
+      // 👉 effect 내부에서 동기 setState 금지 → 비동기로 분리
+      timer = window.setTimeout(() => {
+        setIsVisible(true);
+      }, 0);
+    } else {
+      // 👉 닫힐 때 애니메이션 끝난 뒤 unmount
+      timer = window.setTimeout(() => {
+        setIsVisible(false);
+      }, 300); // CSS transition duration과 동일
+    }
 
-    return (
-        <div className={`modal-overlay ${isOpen ? 'open' : 'closing'}`} onClick={onCancel}>
-            <div className={`modal-content ${isOpen ? 'open' : 'closing'}`} onClick={(e) => e.stopPropagation()}>
-                <h3 className="modal-title">{title}</h3>
-                <p className="modal-message">{message}</p>
-                <div className="modal-actions">
-                    <button className="modal-button cancel" onClick={onCancel}>
-                        {cancelText}
-                    </button>
-                    <button className={`modal-button confirm ${type}`} onClick={onConfirm}>
-                        {confirmText}
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
-};
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [isOpen]);
 
-export default Modal;
+  // 완전히 닫힌 상태면 DOM에서 제거
+  if (!isOpen && !isVisible) return null;
+
+  return (
+    <div className={`modal-overlay ${isVisible ? "show" : ""}`}>
+      <div className="modal">
+        <button className="modal-close" onClick={onClose}>
+          ✕
+        </button>
+        {children}
+      </div>
+    </div>
+  );
+}

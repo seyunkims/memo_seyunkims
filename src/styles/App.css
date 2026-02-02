@@ -239,3 +239,76 @@
     box-shadow: 0 0 15px rgba(255, 107, 107, 0.4);
     transform: scale(1.05);
 }
+
+/* =========================
+   App Modal Content (children)
+   ========================= */
+
+.app-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 6px 2px;
+}
+
+.app-modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.app-modal-message {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.92;
+  white-space: pre-line;
+}
+
+.app-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* 버튼 기본 */
+.app-modal-cancel,
+.app-modal-confirm {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.06s ease, opacity 0.15s ease;
+}
+
+.app-modal-cancel:active,
+.app-modal-confirm:active {
+  transform: translateY(1px);
+}
+
+/* 취소 버튼 */
+.app-modal-cancel {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 확인 버튼 - primary */
+.app-modal-confirm.primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+}
+
+/* 확인 버튼 - danger */
+.app-modal-confirm.danger {
+  background: rgba(239, 68, 68, 0.92);
+  color: white;
+}
+
+/* danger 모달일 때 타이틀 강조(선택) */
+.app-modal.danger .app-modal-title {
+  color: rgba(239, 68, 68, 0.95);
+}
