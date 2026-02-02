@@ -37,3 +37,15 @@
 .search-input::placeholder {
     color: #8e8e93;
 }
+
+@media (max-width: 768px) {
+    .search-bar-container {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    
+    .search-input-wrapper {
+        padding: 8px 14px;
+    }
+}
