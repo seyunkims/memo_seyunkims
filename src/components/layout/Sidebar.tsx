@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onViewChange }) => {
             </nav>
 
             <div className="sidebar-footer">
-                <p>© 2024 Seyun Kim</p>
+                <p>© 2026 Seyun Kim</p>
             </div>
         </aside>
     );
