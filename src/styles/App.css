@@ -86,7 +86,7 @@
     padding: 12px 24px;
     font-size: 1rem;
     font-weight: bold;
-    color: white;
+    color: #000000;
     background: var(--gradient-primary);
     border: none;
     border-radius: var(--radius-md);
