@@ -12,6 +12,7 @@ function MemoItem({ memo, onUpdateMemo, onDeleteMemo }: MemoItemProps) {
     };
 
     const handleDelete = () => {
+        console.log("Deleted clicked for id:", memo.id);
         if (window.confirm("정말로 이 메모를 삭제하시겠습니까?")) {
             onDeleteMemo(memo.id);
         }

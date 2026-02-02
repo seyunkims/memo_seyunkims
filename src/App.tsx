@@ -47,6 +47,7 @@ function App() {
     };
 
     const handleDeleteAllMemos = () => {
+        console.log("Delete All clicked");
         if (window.confirm("정말로 모든 메모를 삭제하시겠습니까?")) {
             setMemos([]);
         }
