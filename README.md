@@ -1,5 +1,6 @@
 # 📝 세윤이의 메모장 V2.0 (Notepad)
 
+ß
 ## ✨ 주요 기능 (Key Features)
 
 ### 🖥️ Professional Dashboard UI
@@ -41,7 +42,3 @@
    ```bash
    npm run dev
    ```
-
-## 🤝 기여하기 (Contributing)
-
-이 프로젝트는 오픈 소스이며, 누구나 기여할 수 있습니다. 버그 제보나 기능 제안은 Issue를 통해 남겨주세요.

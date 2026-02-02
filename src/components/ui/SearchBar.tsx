@@ -14,7 +14,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchQuery, onSearchChange }) =>
                 <input
                     type="text"
                     className="search-input"
-                    placeholder="검색어 입력..."
+                    placeholder="검색"
                     value={searchQuery}
                     onChange={(e) => onSearchChange(e.target.value)}
                 />

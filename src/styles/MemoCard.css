@@ -1,28 +1,29 @@
 /* src/styles/MemoCard.css */
 .memo-card {
-    background-color: #27272a;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--ios-bg-card);
+    border: 1px solid #e5e5ea;
     border-radius: 12px;
     padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 120px;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .memo-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.1);
-    background-color: #2e2e32;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-color: #d1d1d6;
+    background-color: #ffffff;
 }
 
 .memo-card-content {
     flex: 1;
-    color: #e4e4e7;
+    color: var(--ios-text-primary);
     font-size: 0.95rem;
     line-height: 1.5;
     white-space: pre-wrap;
@@ -35,7 +36,7 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #f2f2f7;
 }
 
 .date {
@@ -81,7 +82,7 @@
     height: 100px;
     background: transparent;
     border: none;
-    color: #ffffff;
+    color: #000000;
     font-size: 0.95rem;
     resize: none;
     outline: none;
